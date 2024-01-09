@@ -3,25 +3,131 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	background: #0c151d;
+}
+
+@layer base {
+	.text-color--primary {
+		@apply text-[#F1F2F4];
+	}
+
+	.text-color--secondary {
+		@apply text-[#A3ABB2];
+	}
+
+	.spacer-tiny {
+		@apply mt-1;
+	}
+	.spacer-tiny--horizontal {
+		@apply mx-1;
+	}
+	.spacer-tiny--vertical {
+		@apply ms-1;
+	}
+
+	.spacer-xs {
+		@apply mt-2;
+	}
+
+	.spacer-xs--horizontal {
+		@apply mx-2;
+	}
+	.spacer-xs--vertical {
+		@apply ms-2;
+	}
+
+	.spacer-sm {
+		@apply mt-3;
+	}
+
+	.spacer-sm--horizontal {
+		@apply mx-3;
+	}
+	.spacer-sm--vertical {
+		@apply ms-3;
+	}
+
+	.spacer-base {
+		@apply mt-3.5;
+	}
+
+	.spacer-base--horizontal {
+		@apply mx-3.5;
+	}
+	.spacer-base--vertical {
+		@apply ms-3.5;
+	}
+
+	.spacer-xs {
+		@apply mt-2;
+	}
+
+	.spacer-xs--horizontal {
+		@apply mx-2;
+	}
+	.spacer-xs--vertical {
+		@apply ms-2;
+	}
+
+	.spacer-md {
+		@apply mt-4;
+	}
+
+	.spacer-md--horizontal {
+		@apply mx-4;
+	}
+	.spacer-md--vertical {
+		@apply ms-4;
+	}
+
+	.spacer-lg {
+		@apply mt-6;
+	}
+
+	.spacer-lg--horizontal {
+		@apply mx-6;
+	}
+	.spacer-lg--vertical {
+		@apply ms-6;
+	}
+
+	.spacer-xl {
+		@apply mt-8;
+	}
+
+	.spacer-xl--horizontal {
+		@apply mx-8;
+	}
+	.spacer-xl--vertical {
+		@apply ms-8;
+	}
+}
+
+@layer components {
+	.text-title {
+		@apply text-[32px] md:text-[46px] lg:text-[46px] font-medium text-color--primary;
+	}
+
+	.text-subtitle {
+		@apply text-base md:text-2xl lg:text-2xl font-medium text-color--primary;
+	}
+
+	.text-paragraph {
+		@apply text-sm md:text-[22px] lg:text-[22px] font-medium text-color--primary;
+	}
 }
