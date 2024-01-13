@@ -3,7 +3,7 @@ import { IIconProps } from "./Icon.interface";
 import { IconType } from "./data";
 
 export const Icon = (_props: IIconProps) => {
-	const { size = "auto", name, className } = _props;
+	const { size = 24, name, className } = _props;
 
 	return (
 		<Image
