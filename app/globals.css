@@ -18,16 +18,34 @@
 
 body {
 	color: rgb(var(--foreground-rgb));
-	background: #0c151d;
 }
 
 @layer base {
+	body {
+		@apply dark:bg-[#0C151D] bg-white;
+	}
+
+	.bg-primary {
+		@apply bg-[#FBD144] focus:ring-yellow-200;
+	}
+
+	.bg-secondary {
+		@apply bg-[#A3ABB2] focus:ring-gray-200;
+	}
+
+	.bg-dark-primary {
+		@apply dark:bg-[#0C151D] bg-blue-500 focus:ring-blue-300 dark:focus:ring-gray-300;
+	}
+
+	.bg-dark-secondary {
+		@apply dark:bg-[#171F26] bg-blue-500 focus:ring-blue-300 dark:focus:ring-gray-300;
+	}
 	.text-color--primary {
-		@apply text-[#F1F2F4];
+		@apply dark:text-[#F1F2F4] text-[#0C151D];
 	}
 
 	.text-color--secondary {
-		@apply text-[#A3ABB2];
+		@apply dark:text-[#A3ABB2] text-[#0C151D];
 	}
 
 	.spacer-tiny {

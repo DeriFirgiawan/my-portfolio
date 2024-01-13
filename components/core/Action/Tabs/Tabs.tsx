@@ -1,27 +1,39 @@
 "use client";
-import React, { forwardRef, useState } from "react";
+import { Tab } from "@headlessui/react";
+import { forwardRef, useState } from "react";
 import { TabsProps } from "./Tabs.interface";
-import { TabsItem } from "./TabsItem";
+import { Animation } from "@/components";
 
+function classNames(...classes: any) {
+	return classes.filter(Boolean).join(" ");
+}
 export const Tabs = forwardRef((_props: TabsProps, _) => {
-	const { className, listItems, onRenderItem } = _props;
-	const [isActiveName, setIsActiveName] = useState<string>(listItems[0]);
-
-	const $style = `bg-[#171F26] md:p-6 lg:p-6 p-2 rounded-lg gap-6 flex ${className}`;
+	const { listTabs, renderComponent } = _props;
+	const $styleActive = "dark:bg-[#0C151D] bg-slate-200";
+	const [activeTab, setActiveTab] = useState(listTabs[0]);
+	const $styleInActive = "dark:bg-[#171F26] bg-slate-50";
 	return (
-		<React.Fragment>
-			<div className={$style}>
-				{listItems?.map((value) => (
-					<TabsItem
-						key={value}
-						title={value}
-						isActive={isActiveName === value}
-						onPress={() => setIsActiveName(value)}
-					/>
-				))}
-			</div>
-			<div className="spacer-xl" />
-			{onRenderItem(isActiveName)}
-		</React.Fragment>
+		<Animation tagType="div" animation="fadeIn" className="w-full">
+			<Tab.Group>
+				<Tab.List className="flex items-center px-2 py-2 rounded-xl dark:bg-[#171F26] bg-slate-50 gap-2">
+					{listTabs.map((value, index) => (
+						<Tab
+							// onClick={() => setActiveTab(value)}
+							className={({ selected }) => {
+								return classNames(
+									"w-full rounded-lg text-sm font-bold text-color--primary leading-5 py-4 md:py-6 lg:py-6 ",
+									"ring-white/60 focus:outline-none",
+									selected ? $styleActive : $styleInActive
+								);
+							}}
+							key={index}
+						>
+							{value}
+						</Tab>
+					))}
+				</Tab.List>
+				{renderComponent}
+			</Tab.Group>
+		</Animation>
 	);
 });

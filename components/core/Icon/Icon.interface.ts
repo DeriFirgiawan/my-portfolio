@@ -4,4 +4,5 @@ export interface IIconProps {
 	size?: number;
 	color?: string;
 	name: IconTypeName;
+	className?: string;
 }

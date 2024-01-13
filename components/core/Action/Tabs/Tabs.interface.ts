@@ -1,9 +1,8 @@
 import React from "react";
 
 export interface TabsProps {
-	listItems: string[];
-	className?: string;
-	onRenderItem: (value: string) => React.ReactNode;
+	listTabs: string[];
+	renderComponent: React.ReactNode;
 }
 
 export interface TabsItemsProps {
