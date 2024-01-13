@@ -1,7 +1,7 @@
 import { IconTypeName } from "./Icon.types";
 
 export interface IIconProps {
-	size?: number;
+	size?: string | number;
 	color?: string;
 	name: IconTypeName;
 	className?: string;

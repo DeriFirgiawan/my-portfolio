@@ -114,10 +114,28 @@ export const Skills = [
 	},
 ];
 
+export const Experience = [
+	{
+		id: 1,
+		startDate: "Nov 2021 - Dec 2023",
+		name: "Xcidic PTE LTD",
+		title: "Software Developer",
+		description: "",
+	},
+	{
+		id: 2,
+		startDate: "Jun 2021 - Nov 2021",
+		name: "PT Sahaware Teknologi Indonesia",
+		title: "Front-End Engineer",
+		description: "",
+	},
+];
+
 Profile.completed_projects = Portfolio.data.length;
 
 export const Data = {
 	profile: { ...Profile },
 	portfolio: { ...Portfolio },
 	skills: [...Skills],
+	experiences: [...Experience],
 };

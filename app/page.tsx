@@ -7,7 +7,7 @@ import { Tab } from "@headlessui/react";
 export default function Home() {
 	const { listTabs, onDownloadFile } = useHome();
 	return (
-		<ThemeProvider attribute="class" defaultTheme="light">
+		<ThemeProvider attribute="class" defaultTheme="dark">
 			<main>
 				<HomePage.Header />
 				<div className="flex items-center justify-center">
@@ -27,7 +27,12 @@ export default function Home() {
 								type="primary"
 								onClik={onDownloadFile}
 							/>
-							<Button text="Contact Me" />
+							<Button
+								text="Contact Me"
+								onClik={() =>
+									(location.href = "mailto:derifirgiawan025@gmail.com")
+								}
+							/>
 						</Animation>
 
 						<div className="mt-4 md:mt-12 lg:mt-12" />
@@ -47,6 +52,13 @@ export default function Home() {
 										<Tab.Panel>
 											<div className="mt-6">
 												<HomePage.Skills />
+												<div className="spacer-xl" />
+												<Footer />
+											</div>
+										</Tab.Panel>
+										<Tab.Panel>
+											<div className="mt-6">
+												<HomePage.Experience />
 												<div className="spacer-xl" />
 												<Footer />
 											</div>

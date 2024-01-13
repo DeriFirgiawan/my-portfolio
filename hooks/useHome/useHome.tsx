@@ -1,5 +1,5 @@
 export const useHome = () => {
-	const listTabs = ["Portfolio", "Skills", "Work History"];
+	const listTabs = ["Portfolio", "Skills", "Experience's"];
 	const listIcon = [
 		{
 			id: 1,

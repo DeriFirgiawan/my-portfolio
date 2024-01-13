@@ -53,6 +53,7 @@ export const ProfileInfo = () => {
 						>
 							<Animation tagType="div" animation="fadeIn" key={value.id}>
 								<Icon
+									size={24}
 									name={value.icon as IconTypeName}
 									className="transition ease-in-out hover:-translate-y-1 hover:scale-110 delay-150 hover:cursor-pointer"
 								/>
