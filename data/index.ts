@@ -1,6 +1,6 @@
 export const Profile = {
 	name: "Deri Firgiawan",
-	title: "Software Enginner",
+	title: "Software Engineer",
 	experience: 2,
 	completed_projects: 5,
 	satisfied_client: 3,
